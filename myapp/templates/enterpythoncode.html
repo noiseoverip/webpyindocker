@@ -1,0 +1,19 @@
+<h1>Run Python in docker through Django	</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<!-- url 'submit' below is url from urls.py that will be called--->
+<form action="{% url 'submit' %}" method="post">
+{% csrf_token %}
+
+    <input hidden type="name" name="script_name" id="script_name" value="test1" />
+
+    <textarea name="script_code" id="script_code" cols="120" rows="15">
+# Enter your python script here below
+# Try these methods:
+# * hello() - print word hello
+# * double(2) - returns 2*2s
+    </textarea>
+
+    <input type="submit" value="Run Now" />
+</form>
